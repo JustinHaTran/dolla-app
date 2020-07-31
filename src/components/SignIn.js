@@ -3,30 +3,34 @@ import './App.css';
 
 function SignIn(){
     return(
-        <h1>Sign In Page</h1>
-    // <div class="wrapper fadeInDown">
-    //     <div id="formContent">
-    //         <h2 class="active"> Sign In </h2>
-    //         <h2 class="inactive underlineHover">Sign Up </h2>
+      <form>
+      <h3>Sign In</h3>
 
-    // <div class="fadeIn first">
-    //   <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-    // </div>
+      <div className="form-group">
+          <label>Email address</label>
+          <input type="email" className="form-control" placeholder="Enter email" />
+      </div>
 
-    // <form>
-    //   <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-    //   <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-    //   <input type="submit" class="fadeIn fourth" value="Log In">
-    // </form>
+      <div className="form-group">
+          <label>Password</label>
+          <input type="password" className="form-control" placeholder="Enter password" />
+      </div>
 
+      <div className="form-group">
+          <div className="custom-control custom-checkbox">
+              <input type="checkbox" className="custom-control-input" id="customCheck1" />
+              <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+          </div>
+      </div>
 
-    // <div id="formFooter">
-    //   <a class="underlineHover" href="#">Forgot Password?</a>
-    // </div>
-
-    // </div>
-    //     </div>
-    )
+      <button type="submit" className="btn btn-primary btn-block">Submit</button>
+      <p className="forgot-password text-right">
+          Forgot <a href="#">password?</a>
+      </p>
+  </form>
+    );
 }
+
+
 
 export default SignIn;
