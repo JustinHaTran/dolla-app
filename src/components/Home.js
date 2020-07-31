@@ -7,9 +7,6 @@ const home = () => {
         <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Dolla
-          </p>
         </header>
         <button className="App-button1">Sign In</button>
         <button className="App-button2">Sign Up</button>
