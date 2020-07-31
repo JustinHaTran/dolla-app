@@ -26,7 +26,7 @@
 
 .App-link {
   color: #61dafb;
-}
+} 
 
 @keyframes App-logo-spin {
   from {
@@ -78,4 +78,17 @@ line-height: 21px;
 
 
 color: #FFFFFF;
+}
+
+.Nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color:#96CBB8;
+  color: black;
+}
+
+.a{
+  color: red;
 }
