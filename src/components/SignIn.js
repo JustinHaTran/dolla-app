@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 
+import { NavLink } from 'react-router-dom';
 function SignIn(){
     return(
+       
       <form>
       <h3>Sign In</h3>
 
@@ -26,6 +28,9 @@ function SignIn(){
       <button type="submit" className="btn btn-primary btn-block">Submit</button>
       <p className="forgot-password text-right">
           Forgot <a href="#">password?</a>
+      </p>
+      <p className="forgot-password text-right">
+        <NavLink to="/SignUp">Sign Up</NavLink>
       </p>
   </form>
     );

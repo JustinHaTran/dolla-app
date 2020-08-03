@@ -19,13 +19,19 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Navigation />
-            <Switch>
-             <Route path="/" component={Home} exact/>
-             <Route path="/SignIn" component={SignIn} exact/>
-             <Route path="/Budget" component={Budget} exact/>
-             <Route path="/SignUp" component={SignUp} exact/>
-             <Route component={Error}/>
-           </Switch>
+          
+              <Switch>
+              <Route path="/" component={Home} exact/>
+              <Route path="/Budget" component={Budget} exact/>
+                <div className="auth-wrapper">
+                  <div className="auth-inner">
+                    <Route path="/SignIn" component={SignIn} exact/>
+                    <Route path="/SignUp" component={SignUp} exact/>
+                  </div>
+                </div>
+              <Route component={Error}/>
+              </Switch>
+            
         </div> 
       </BrowserRouter>
      
