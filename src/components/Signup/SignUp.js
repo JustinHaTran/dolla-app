@@ -48,7 +48,7 @@ export default class SignUp extends Component {
         //#TODO update url to meet api standard
 
         fetch(`http://localhost:8080/user/`,{
-          method: 'post',
+          method: 'POST',
             headers: {
               'accept': 'application/json',
               'Content-Type': 'application/json'
@@ -75,28 +75,25 @@ export default class SignUp extends Component {
                     <label>First name</label>
                     <input type="text" className="form-control" id="firstname" name="firstname"
                      placeholder="First name" onChange={(e) => this.setState({ firstname : e.target.value})}
-                     required />
+                      />
                 </div>
 
                 <div className="form-group">
                     <label>Last name</label>
                     <input type="text" className="form-control" id="lastname" name="lastname"
-                     placeholder="Last name"  onChange={(e) => this.setState({ lastname : e.target.value})}
-                     required/>
+                     placeholder="Last name"  onChange={(e) => this.setState({ lastname : e.target.value})}/>
                 </div>
 
                 <div className="form-group">
                     <label>Email address</label>
                     <input type="email" className="form-control" id="email" name="email"
-                     placeholder="Enter email" onChange={(e) => this.setState({ email : e.target.value})}
-                     required/>
+                     placeholder="Enter email" onChange={(e) => this.setState({ email : e.target.value})}/>
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
                     <input type="password" className="form-control" id="password" name="password"
-                     placeholder="Enter password" onChange={(e) => this.setState({ password : e.target.value})}
-                    required/>
+                     placeholder="Enter password" onChange={(e) => this.setState({ password : e.target.value})}/>
                 </div>
 
                 <button id="submitButton" type="submit" className="btn btn-primary btn-block" value="submit" onClick={() => {
