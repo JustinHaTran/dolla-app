@@ -47,7 +47,7 @@ export default class SignUp extends Component {
     handleSignUp = () =>{
         //#TODO update url to meet api standard
 
-        fetch(`http://localhost:8080/user/`,{
+        fetch(`http://localhost:8080/user`,{
           method: 'POST',
             headers: {
               'accept': 'application/json',
