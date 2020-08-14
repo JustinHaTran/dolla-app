@@ -8,9 +8,6 @@ const Home = () => {
         <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Dolla
-          </p>
         </header>
         <NavLink to="/SignIn"><button className="App-button1">Sign In</button></NavLink>
         <NavLink to="/SignUp"><button className="App-button2">Sign Up</button></NavLink>
