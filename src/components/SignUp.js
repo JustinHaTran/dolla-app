@@ -15,7 +15,7 @@ export default class SignUp extends Component {
     handleSignUp = () => {
         const data = {
             email: this.state.email,
-            firstName: this.state.firstnName,
+            firstName: this.state.firstName,
             lastName: this.state.lastName,
             password: this.state.password
         };

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { NavLink } from 'react-router-dom';
+//import authHeader from './auth-header'
 
 class SignIn extends Component {
     state = {
@@ -17,9 +18,20 @@ class SignIn extends Component {
 
         axios.post('http://localhost:8080/signin', data)
             .then(response => {
-                console.log(response);
-            })
+                if (response.data.JwtToken) {
+                    localStorage.setItem("uToken", JSON.stringify(response.data.JwtToken));
+                    localStorage.setItem("user", this.state.email)
+                    return this.props.history.push('/budget');
+                }
+                return null;
+            });
     }   
+
+    /*
+    logout() {
+        localStorage.removeItem("user");
+    }
+    */
 
     render() {
         return(
