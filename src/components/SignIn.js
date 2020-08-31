@@ -10,17 +10,19 @@ class SignIn extends Component {
         password: '',
     }
 
+    //Sign in sending email and password data to the backend and receive JWT
     handleSignIn = () => {
         const data = {
             email: this.state.email,
             password: this.state.password
         };
-
+        //post request with email and password. Stores JWT as "uToken" and user's email as "user"
         axios.post('http://localhost:8080/signin', data)
             .then(response => {
                 if (response.data.JwtToken) {
                     localStorage.setItem("uToken", JSON.stringify(response.data.JwtToken));
                     localStorage.setItem("user", this.state.email)
+                    //redirect to budget page
                     return this.props.history.push('/budget');
                 }
                 return null;
@@ -28,8 +30,10 @@ class SignIn extends Component {
     }   
 
     /*
+    //logout function deleting local storage items 
     logout() {
         localStorage.removeItem("user");
+        localStorage.removeItem("uToken");
     }
     */
 

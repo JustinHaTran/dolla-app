@@ -12,29 +12,27 @@ class Budget extends Component {
         list: [],
     }
 
+    //on load fetches all budgets for this user. Email is stored in the local storage.
     componentDidMount= () => {
         this.getUserId(localStorage.getItem("user"))
+        .then(result => {
+            var userId = result.data.id
+            this.setState({ID: userId})
+            this.getBudgetList(userId)
             .then(result => {
-                var userId = result.data.id
-                this.setState({ID: userId})
-                this.getBudgetList(userId)
-                .then(result => {
-                    console.log(result.data)
-                })
+                console.log(result.data)
             })
-            //console.log(userId)
-        
-        // .then(result => this.setState({ID: result.data.id}))
-
-        // this.getBudgetList(this.state.ID)
-        //     .then(res => this.setState({ list: res.data}))
+        })
     }
+
+    //Get request for user ID using user email
     getUserId(userEmail) {
         return axios.get('http://localhost:8080/user/'+ userEmail)
     }
 
+    //Get request for all budgets for user using state.ID
     getBudgetList(userId) {
-        //Get All budgets and poopulate list
+        //Get All budgets and populate list
         return axios.get('http://localhost:8080/budget/all/'+ userId)
     }
 
@@ -42,7 +40,6 @@ class Budget extends Component {
         return(
             <div>
                 <h1>Budget Page</h1>
-                <button type="button" className="btn btn-primary">GetBudgets</button>
             </div>
         )
     }
